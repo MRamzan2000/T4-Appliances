@@ -1,4 +1,4 @@
-package com.bettv.app;
+package com.t4four.app;
 
 import io.flutter.embedding.android.FlutterActivity;
 

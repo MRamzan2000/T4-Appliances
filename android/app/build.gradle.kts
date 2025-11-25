@@ -29,12 +29,12 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.bettv.app"
+    namespace = "com.t4four.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
     defaultConfig {
-        applicationId = "com.bettv.app"
+        applicationId = "com.t4four.app"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode

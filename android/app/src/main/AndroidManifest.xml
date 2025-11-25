@@ -1,16 +1,43 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bettv.app">
+    package="com.t4four.app">
 
     <!-- Internet permission -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Required to query apps for URL intents (tel + others) -->
+    <queries>
+        <!-- For regular web URLs -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+
+        <!-- WhatsApp -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="whatsapp" />
+        </intent>
+
+        <!-- Facebook -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="fb" />
+        </intent>
+
+        <!-- ✅ Phone dialer support (Fix for tel: issue) -->
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+    </queries>
+
     <application
-        android:label="BetTvPlus"
+        android:label="T4 Appliances"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:hardwareAccelerated="true">
 
-        <!-- ✅ AdMob App ID -->
+        <!-- AdMob App ID -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
@@ -33,29 +60,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Flutter generated plugin registration -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
 
     </application>
-
-    <!-- Required to query apps for URL intents -->
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="https" />
-        </intent>
-
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="whatsapp" />
-        </intent>
-
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="fb" />
-        </intent>
-    </queries>
 
 </manifest>
